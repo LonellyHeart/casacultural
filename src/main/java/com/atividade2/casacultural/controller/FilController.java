@@ -4,10 +4,10 @@
  */
 package com.atividade2.casacultural.controller;
 
-/**
- *
- * @author MATRIZ
- */
+// BLOCO REFERENTE AO FRONTEND, NÃO SENDO UTILIZADO NO MOMENTO
+
+/*
 public class FilController {
     
 }
+*/

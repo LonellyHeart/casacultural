@@ -27,7 +27,8 @@ public class FilmeService {
         fil.setTitulo(filmeRequest.getTitulo());
         fil.setSinopse(filmeRequest.getSinopse());
         fil.setGenero(filmeRequest.getGenero());
-        fil.setAnoLancamento(filmeRequest.getAnoLancamento());
+        fil.setLancamento(filmeRequest.getLancamento());
+        filmeRepository.save(fil);
         return fil;
     }
 

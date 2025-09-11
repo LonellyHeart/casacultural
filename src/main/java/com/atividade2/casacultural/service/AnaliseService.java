@@ -25,9 +25,10 @@ public class AnaliseService {
 
     public AnaliseEntity atualizarAnalise(Integer anaId, AnaliseEntity analiseRequest) {
         AnaliseEntity ana = getAnaliseId(anaId);
-        ana.setNomeFilme(analiseRequest.getNomeFilme());
+        ana.setFilme(analiseRequest.getFilme());
         ana.setAnalise(analiseRequest.getAnalise());
         ana.setNota(analiseRequest.getNota());
+        analiseRepository.save(ana);
         return ana;
     }
 
@@ -44,9 +45,9 @@ public class AnaliseService {
         analiseRepository.deleteById(ana.getId());
     }
     
-    public List<AnaliseEntity> getAnalisePorNomeFilme(String nomeFilme) {
+    public List<AnaliseEntity> getAnalisePorNomeFilme(String filme) {
 
-        return analiseRepository.findByNomeFilmeContaining(nomeFilme);
+        return analiseRepository.findByFilmeContaining(filme);
     }
     
      public List<AnaliseEntity> getMaioresNotas() { 

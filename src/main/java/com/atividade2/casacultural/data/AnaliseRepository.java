@@ -10,17 +10,17 @@ import org.springframework.stereotype.Repository;
 @Repository 
 public interface AnaliseRepository extends JpaRepository<AnaliseEntity, Integer> { 
 
-    AnaliseEntity findByNomeFilme(String nomeFilme); 
+    AnaliseEntity findByFilme(String filme); 
 
-    List<AnaliseEntity> findByNomeFilmeStartingWith(String nomeFilme); 
+    List<AnaliseEntity> findByFilmeStartingWith(String filme); 
 
-    List<AnaliseEntity> findByNomeFilmeEndingWith(String nomeFilme); 
+    List<AnaliseEntity> findByFilmeEndingWith(String filme); 
 
-    List<AnaliseEntity> findByNomeFilmeContaining(String nomeFilme); 
+    List<AnaliseEntity> findByFilmeContaining(String filme); 
 
-    List<AnaliseEntity> findByOrderByNomeFilmeAsc(); 
+    List<AnaliseEntity> findByOrderByFilmeAsc(); 
 
-    List<AnaliseEntity> findByOrderByNomeFilmeDesc(); 
+    List<AnaliseEntity> findByOrderByFilmeDesc(); 
     
     @Query(value = "SELECT * FROM Analise a WHERE a.nota = (SELECT MAX(nota) FROM Analise)", nativeQuery = true)
     List<AnaliseEntity> findAllMaiorNota();
