@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Nova Analise</title>
+        <meta charset="UTF-8">
+<body>
+    <header th:insert="navbar.html :: nav"></header> 
+        <h1>Cadastro de nova Analise</h1> 
+        <form th:action="@{/nova-analise}" method="post"> 
+                <div> 
+                        <p>ID: <input type="text" th:field="${analise.id}" /> </p> 
+                        <p>Filme: <input type="text" th:field="${analise.nomeFilme}" /> </p>  
+                        <p>Analise: <input type="text" th:field="${analise.analise}" /> </p>  
+                        <p>Nota: <input type="text" th:field="${analise.nota}" /> </p>  
+                    </div> 
+                <button type="submit">Enviar</button> 
+            </form> 
+</body> 
+</html> 

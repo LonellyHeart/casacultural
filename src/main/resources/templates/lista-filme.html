@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head> 
+        <title>Lista de filmes</title> 
+    </head> 
+    <body> 
+            <header th:insert="navbar.html"></header> 
+            <h1>Lista de filmes</h1> 
+            <p>Essas são todas os filmes cadastrados:</p> 
+            <table> 
+                    <thead> 
+                            <tr> 
+                                    <th>ID</th> 
+                                    <th>Titulo</th> 
+                                    <th>Sinopse</th> 
+                                    <th>Genero</th> 
+                                    <th>Ano de Lançamento</th> 
+                                </tr> 
+                        </thead> 
+                    <tbody> 
+                            <tr th:each="filme : ${listaFilme}"> 
+                                    <td th:text="${filme.id}"></td> 
+                                    <td th:text="${filme.titulo}"></td>
+                                    <td th:text="${filme.sinopse}"></td>
+                                    <td th:text="${filme.genero}"></td>
+                                    <td th:text="${filme.anoLancamento}"></td>
+                                </tr> 
+                        </tbody> 
+                </table> 
+    </body> 
+</html>
+

@@ -1,0 +1,17 @@
+                <!DOCTYPE html> 
+                <html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+                <head> 
+                    <title>Analise</title> 
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+                </head> 
+                <body> 
+                     <header th:insert="navbar.html :: nav"></header> 
+                    <h1>Analise Cadastrada</h1> 
+                    <p>Nova analise feita!</p> 
+                    <br> 
+                    <p>ID: <span th:text="${analise.id}" /></p> 
+                    <p>Filme: <span th:text="${analise.nomeFilme}" /></p> 
+                    <p>Analise: <span th:text="${analise.analise}" /></p> 
+                    <p>Nota: <span th:text="${analise.nota}" /></p> 
+                </body> 
+                </html> 
