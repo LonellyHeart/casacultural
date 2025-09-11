@@ -29,13 +29,13 @@ public class FilmeController {
     FilmeService filmeService;
 
     @GetMapping("/lista-filme")
-    public ResponseEntity<List> getAllAnalises() {
+    public ResponseEntity<List> getAllFilmes() {
         List<FilmeEntity> filmes = filmeService.listarTodosFilmes();
         return new ResponseEntity<>(filmes, HttpStatus.OK);
     }
 
     @GetMapping("/pesquisar-filme/{id}")
-    public ResponseEntity<FilmeEntity> getAnaliseById(@PathVariable Integer id) {
+    public ResponseEntity<FilmeEntity> getFilmeById(@PathVariable Integer id) {
         FilmeEntity filme = filmeService.getFilmeId(id);
         return new ResponseEntity<>(filme, HttpStatus.OK);
     }
@@ -65,8 +65,5 @@ public class FilmeController {
         return new ResponseEntity<>(filmes, HttpStatus.OK); 
 
     } 
-    
-    
-
       
 }

@@ -20,12 +20,12 @@ public class FilmeEntity {
     private Integer id;
 
     @NotBlank(message = "Nome do filme obrigatório")
-    private String titulo; // De momento, não vai ser um objetido do tipo FilmeEntity
+    private String titulo;
     
     private String sinopse;
     
     private String genero;
     
-    private String lancamento; // vai ser transformado em date para ser inserido no SQL
+    private String lancamento; // esta sendo considerado como String, pois vai ser colocado como um VARCHAR(4) no SQL
 
 }
