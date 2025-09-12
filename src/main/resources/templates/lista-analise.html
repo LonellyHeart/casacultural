@@ -26,7 +26,7 @@
             <tr th:each="analise : ${listarAnalises}">
                 <td th:text="${analise.id}"></td>
                 <td th:text="${analise.filme}"></td>
-                <td th:text="${analise.analise}"></td>
+                <td th:text="${analise.texto}"></td>
                 <td th:text="${analise.nota}"></td>
                 <td>
                     <a th:href="@{/deletarAnalise/{id}(id=${analise.id})}" class="btn btn-danger btn-sm">Excluir</a>

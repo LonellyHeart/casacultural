@@ -29,7 +29,8 @@ public class AnaliseEntity {
     private String filme; // De momento não será usada como objeto FilmeEntity
     
     @Size(min = 10, message = "A analise deve haver pelo menos 10 letras para ser considerada valida")
-    private String analise;
+    @Column(name = "analise")
+    private String texto;
     
    @NotNull(message = "A analise deve conter uma nota para ser considerada valida")
     private double nota;

@@ -26,7 +26,7 @@ public class AnaliseService {
     public AnaliseEntity atualizarAnalise(Integer anaId, AnaliseEntity analiseRequest) {
         AnaliseEntity ana = getAnaliseId(anaId);
         ana.setFilme(analiseRequest.getFilme());
-        ana.setAnalise(analiseRequest.getAnalise());
+        ana.setTexto(analiseRequest.getTexto());
         ana.setNota(analiseRequest.getNota());
         analiseRepository.save(ana);
         return ana;
