@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cadastro de Filmes</title>
+    <title>Atualizar Filme</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
@@ -9,15 +9,12 @@
 <header th:replace="navbar :: navbar"></header>
 
 <div class="container mt-4">
-    <h1 class="mb-4">Cadastro de novo Filme</h1>
+    <h1 class="mb-4">Atualizar Filme</h1>
 
-    <form th:action="@{/cadastro-filme}" method="post" class="row">
+    <form th:action="@{/atualizar-filme}" method="post" class="row">
+        <input type="hidden" th:field="${filme.id}" /> <!-- ID enviado oculto para atualização -->
+
         <div class="col-md-6">
-            <div class="form-group">
-                <label for="id">ID</label>
-                <input id="id" type="text" class="form-control" th:field="${filme.id}" placeholder="ID do filme no Banco de Dados">
-            </div>
-
             <div class="form-group">
                 <label for="titulo">Nome</label>
                 <input id="titulo" type="text" class="form-control" th:field="${filme.titulo}" placeholder="Título do filme">
@@ -42,9 +39,8 @@
         </div>
 
         <div class="col-12 text-center mt-4">
-            <button type="submit" class="btn btn-primary">Salvar Filme</button>
+            <button type="submit" class="btn btn-success">Atualizar Filme</button>
         </div>
-
     </form>
 </div>
 

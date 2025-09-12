@@ -1,6 +1,27 @@
-<nav> 
-        <a th:href="@{/cadastro-filme}">Cadastro de Filme</a> 
-        <a th:href="@{/nova-analise}">Nova Analise</a> 
-        <a th:href="@{/lista-analise}">Lista de Analises</a> 
-        <a th:href="@{/lista-filme}"> Lista de Filmes</a>
-</nav> 
+<!-- navbar.html -->
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="#">Casa Cultural</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/criarFilmeForm}">Cadastro de Filme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/criarAnaliseForm}">Nova Análise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/lista-analise}">Lista de Análises</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/lista-filme}">Lista de Filmes</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,30 +1,41 @@
-<!DOCTYPE html> 
-<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
-    <head> 
-        <title>Lista de analises</title> 
-    </head> 
-    <body> 
-            <header th:insert="navbar.html"></header> 
-            <h1>Lista de analises</h1> 
-            <p>Essas são todas as suas analises:</p> 
-            <table> 
-                    <thead> 
-                            <tr> 
-                                    <th>ID</th> 
-                                    <th>Filme</th> 
-                                    <th>Analise</th> 
-                                    <th>Nota</th> 
-                                </tr> 
-                        </thead> 
-                    <tbody> 
-                            <tr th:each="analise : ${listaAnalise}"> 
-                                    <td th:text="${analise.id}"></td> 
-                                    <td th:text="${analise.nomeFilme}"></td>
-                                    <td th:text="${analise.analise}"></td>
-                                    <td th:text="${analise.nota}"></td>  
-                                </tr> 
-                        </tbody> 
-                </table> 
-    </body> 
-</html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Análises</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<header th:replace="navbar :: navbar"></header>
 
+<div class="container mt-4">
+    <h1 class="mb-4">Lista de Análises</h1>
+    <p>Essas são todas as suas análises:</p>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Filme</th>
+                <th>Análise</th>
+                <th>Nota</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="analise : ${listaAnalise}">
+                <td th:text="${analise.id}"></td>
+                <td th:text="${analise.filme}"></td>
+                <td th:text="${analise.analise}"></td>
+                <td th:text="${analise.nota}"></td>
+                <td>
+                    <a th:href="@{/excluir-analise/{id}(id=${analise.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a th:href="@{/atualizar-analise/{id}(id=${analise.id})}" class="btn btn-success btn-sm">Atualizar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

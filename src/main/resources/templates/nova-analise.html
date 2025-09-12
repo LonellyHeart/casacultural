@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Nova Analise</title>
-        <meta charset="UTF-8">
+<head>
+    <title>Nova Análise</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
 <body>
-    <header th:insert="navbar.html :: nav"></header> 
-        <h1>Cadastro de nova Analise</h1> 
-        <form th:action="@{/nova-analise}" method="post"> 
-                <div> 
-                        <p>ID: <input type="text" th:field="${analise.id}" /> </p> 
-                        <p>Filme: <input type="text" th:field="${analise.nomeFilme}" /> </p>  
-                        <p>Analise: <input type="text" th:field="${analise.analise}" /> </p>  
-                        <p>Nota: <input type="text" th:field="${analise.nota}" /> </p>  
-                    </div> 
-                <button type="submit">Enviar</button> 
-            </form> 
-</body> 
-</html> 
+<header th:replace="navbar :: navbar"></header>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Cadastro de Nova Análise</h1>
+
+    <form th:action="@{/nova-analise}" method="post" th:object="${analise}">
+        <input type="hidden" th:field="*{id}" /> <!-- ID oculto -->
+
+        <div class="form-group">
+            <label for="filme">Filme</label>
+            <input id="filme" type="text" class="form-control" th:field="*{filme}" placeholder="Nome do filme">
+            <div class="text-danger" th:if="${#fields.hasErrors('filme')}" th:errors="*{filme}"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="analise">Análise</label>
+            <input id="analise" type="text" class="form-control" th:field="*{analise}" placeholder="Digite sua análise">
+            <div class="text-danger" th:if="${#fields.hasErrors('analise')}" th:errors="*{analise}"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="nota">Nota</label>
+            <input id="nota" type="text" class="form-control" th:field="*{nota}" placeholder="Nota do filme">
+            <div class="text-danger" th:if="${#fields.hasErrors('nota')}" th:errors="*{nota}"></div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

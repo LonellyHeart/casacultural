@@ -4,9 +4,6 @@
  */
 
 
-// BLOCO REFERENTE AO FRONTEND, NÃO SENDO UTILIZADO NO MOMENTO.
-
-/*
 package com.atividade2.casacultural.controller;
 
 import com.atividade2.casacultural.data.AnaliseEntity;
@@ -27,44 +24,42 @@ public class AnaController {
     @Autowired
     AnaliseService analiseService;
 
-    @GetMapping("/")
-    public String viewHomePage(Model model) {
+    @GetMapping("/lista-analise")
+    public String viewListaAnalise(Model model) {
         model.addAttribute("listarAnalises", analiseService.listarTodasAnalises());
-        return "index";
+        return "lista-analise";
     }
 
     @GetMapping("/deletarAnalise/{id}")
-    public String deletarFuncionario(@PathVariable(value = "id") Integer id) {
+    public String deletarAnalise(@PathVariable(value = "id") Integer id) {
         analiseService.deletarAnalise(id);
-        return "redirect:/";
+        return "redirect:/lista-analise";
     }
 
     @GetMapping("/criarAnaliseForm")
     public String criarAnaliseForm(Model model) {
         AnaliseEntity ana = new AnaliseEntity();
         model.addAttribute("analise", ana);
-        return "inserir";
+        return "nova-analise";
     }
 
     @PostMapping("/salvarAnalise")
     public String salvarAnalise(@Valid @ModelAttribute("analise") AnaliseEntity ana, BindingResult result) {
         if (result.hasErrors()) {
-            return "inserir";
+            return "nova-analise";
         }
         if (ana.getId() == null) {
             analiseService.criarAnalise(ana);
         } else {
             analiseService.atualizarAnalise(ana.getId(), ana);
         }
-        return "redirect:/";
+        return "redirect:/lista-analise";
     }
 
     @GetMapping("/atualizarAnaliseForm/{id}")
     public String atualizarAnaliseForm(@PathVariable(value = "id") Integer id, Model model) {
         AnaliseEntity ana = analiseService.getAnaliseId(id);
-        model.addAttribute("funcionario", ana);
-        return "atualizar";
+        model.addAttribute("analise", ana);
+        return "atualizar-analise";
     }
 }
-
-*/ 
