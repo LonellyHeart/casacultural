@@ -33,7 +33,7 @@ public class FilmeService {
     }
 
     public FilmeEntity getFilmeId(Integer filId) { 
-        return filmeRepository.findById(filId).orElseThrow(() -> new ResourceNotFoundException("Analise não encontrada" + filId));                
+        return filmeRepository.findById(filId).orElseThrow(() -> new ResourceNotFoundException("Filme não encontrado " + filId));                
     } 
 
     public List<FilmeEntity> listarTodosFilmes() {

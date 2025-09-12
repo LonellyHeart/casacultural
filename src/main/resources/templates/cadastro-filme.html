@@ -11,40 +11,37 @@
 <div class="container mt-4">
     <h1 class="mb-4">Cadastro de novo Filme</h1>
 
-    <form th:action="@{/cadastro-filme}" method="post" class="row">
+    <form th:action="@{/salvarFilme}" th:object="${filme}" method="post" class="row">
+        <input type="hidden" th:field="*{id}" />
+
         <div class="col-md-6">
             <div class="form-group">
-                <label for="id">ID</label>
-                <input id="id" type="text" class="form-control" th:field="${filme.id}" placeholder="ID do filme no Banco de Dados">
-            </div>
-
-            <div class="form-group">
                 <label for="titulo">Nome</label>
-                <input id="titulo" type="text" class="form-control" th:field="${filme.titulo}" placeholder="Título do filme">
+                <input id="titulo" type="text" class="form-control" th:field="*{titulo}" placeholder="Título do filme">
+                <div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
             </div>
 
             <div class="form-group">
                 <label for="sinopse">Sinopse</label>
-                <input id="sinopse" type="text" class="form-control" th:field="${filme.sinopse}" placeholder="Sinopse do filme">
+                <input id="sinopse" type="text" class="form-control" th:field="*{sinopse}" placeholder="Sinopse do filme">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group">
                 <label for="genero">Gênero</label>
-                <input id="genero" type="text" class="form-control" th:field="${filme.genero}" placeholder="Ex: Ação, Drama ou Comédia">
+                <input id="genero" type="text" class="form-control" th:field="*{genero}" placeholder="Ex: Ação, Drama ou Comédia">
             </div>
 
             <div class="form-group">
                 <label for="lancamento">Ano de Lançamento</label>
-                <input id="lancamento" type="text" class="form-control" th:field="${filme.lancamento}" placeholder="AAAA">
+                <input id="lancamento" type="text" class="form-control" th:field="*{lancamento}" placeholder="AAAA">
             </div>
         </div>
 
         <div class="col-12 text-center mt-4">
             <button type="submit" class="btn btn-primary">Salvar Filme</button>
         </div>
-
     </form>
 </div>
 

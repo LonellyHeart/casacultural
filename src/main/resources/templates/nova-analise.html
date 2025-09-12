@@ -11,8 +11,8 @@
 <div class="container mt-4">
     <h1 class="mb-4">Cadastro de Nova Análise</h1>
 
-    <form th:action="@{/nova-analise}" method="post" th:object="${analise}">
-        <input type="hidden" th:field="*{id}" /> <!-- ID oculto -->
+    <form th:action="@{/salvarAnalise}" th:object="${analise}" method="post" th:object="${analise}">
+        <input type="hidden" th:field="*{id}" /> 
 
         <div class="form-group">
             <label for="filme">Filme</label>

@@ -23,14 +23,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="analise : ${listaAnalise}">
+            <tr th:each="analise : ${listarAnalises}">
                 <td th:text="${analise.id}"></td>
                 <td th:text="${analise.filme}"></td>
                 <td th:text="${analise.analise}"></td>
                 <td th:text="${analise.nota}"></td>
                 <td>
-                    <a th:href="@{/excluir-analise/{id}(id=${analise.id})}" class="btn btn-danger btn-sm">Excluir</a>
-                    <a th:href="@{/atualizar-analise/{id}(id=${analise.id})}" class="btn btn-success btn-sm">Atualizar</a>
+                    <a th:href="@{/deletarAnalise/{id}(id=${analise.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a th:href="@{/atualizarAnaliseForm/{id}(id=${analise.id})}" class="btn btn-success btn-sm">Atualizar</a>
                 </td>
             </tr>
         </tbody>

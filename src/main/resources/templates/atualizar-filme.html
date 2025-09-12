@@ -11,8 +11,8 @@
 <div class="container mt-4">
     <h1 class="mb-4">Atualizar Filme</h1>
 
-    <form th:action="@{/atualizar-filme}" method="post" class="row">
-        <input type="hidden" th:field="${filme.id}" /> <!-- ID enviado oculto para atualização -->
+    <form th:action="@{/atualizarFilmeForm}" th:object="${filme}" method="post" class="row">
+        <input type="hidden" th:field="${filme.id}" /> 
 
         <div class="col-md-6">
             <div class="form-group">
