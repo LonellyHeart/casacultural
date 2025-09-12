@@ -11,7 +11,7 @@
 <div class="container mt-4">
     <h1 class="mb-4">Cadastro de Nova Análise</h1>
 
-    <form th:action="@{/salvarAnalise}" th:object="${analise}" method="post" class="row">
+    <form th:action="@{/salvarAnalise}" th:object="${analise}" method="post">
         <input type="hidden" th:field="*{id}" /> 
 
         <div class="form-group">
@@ -22,7 +22,7 @@
 
         <div class="form-group">
             <label for="texto">Análise</label>
-            <input id="texto" type="text" class="form-control" th:field="*{texto}" placeholder="Digite sua análise">
+            <textarea id="texto" rows="5" class="form-control" th:field="*{texto}" placeholder="Digite sua análise"></textarea>
             <div class="text-danger" th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}"></div>
         </div>
 
