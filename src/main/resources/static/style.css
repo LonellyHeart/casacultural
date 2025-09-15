@@ -24,3 +24,26 @@
 .dark-theme label {
     color: #f5f5f5 !important;
 }
+
+/* Itens referente ao index.html */
+.dark-theme .list-group-item {
+    background-color: #1f1f1f !important;
+    color: #f5f5f5 !important;
+    border-color: #333 !important;
+}
+
+.dark-theme .list-group-item:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+.dark-theme button.btn {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+.dark-theme button.btn:hover {
+    background-color: #555 !important;
+    color: #fff !important;
+}
